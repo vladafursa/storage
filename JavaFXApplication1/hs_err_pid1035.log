@@ -1,0 +1,45 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x0000ffff9d9dcd34, pid=1035, tid=1173
+#
+# JRE version: OpenJDK Runtime Environment (21.0.2+14) (build 21.0.2+14-LTS)
+# Java VM: OpenJDK 64-Bit Server VM (21.0.2+14-LTS, mixed mode, tiered, compressed oops, compressed class ptrs, g1 gc, linux-aarch64)
+# Problematic frame:
+# C  [libc.so.6+0x3cd34]
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   https://bell-sw.com/support
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: --module-path=/home/ntu-user/.m2/repository/org/openjfx/javafx-base/13/javafx-base-13-linux.jar:/home/ntu-user/.m2/repository/org/openjfx/javafx-base/13/javafx-base-13.jar:/home/ntu-user/.m2/repository/org/openjfx/javafx-controls/13/javafx-controls-13-linux.jar:/home/ntu-user/.m2/repository/org/openjfx/javafx-controls/13/javafx-controls-13.jar:/home/ntu-user/.m2/repository/org/openjfx/javafx-fxml/13/javafx-fxml-13-linux.jar:/home/ntu-user/.m2/repository/org/openjfx/javafx-fxml/13/javafx-fxml-13.jar:/home/ntu-user/.m2/repository/org/openjfx/javafx-graphics/13/javafx-graphics-13-linux.jar:/home/ntu-user/.m2/repository/org/openjfx/javafx-graphics/13/javafx-graphics-13.jar --add-modules=javafx.base,javafx.controls,javafx.fxml,javafx.graphics com.mycompany.javafxapplication1.App
+
+Host: AArch64, 9 cores, 3G, Ubuntu 22.04.3 LTS
+Time: Sat Feb  3 04:54:40 2024 UTC elapsed time: 436.899134 seconds (0d 0h 7m 16s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000fffe780013b0):  JavaThread "XToolkt-Shutdown-Thread"        [_thread_in_native, id=1173, stack(0x0000fffe94e90000,0x0000fffe9508e000) (2040K)]
+
+Stack: [0x0000fffe94e90000,0x0000fffe9508e000],  sp=0x0000fffe9508b500,  free space=2029k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libc.so.6+0x3cd34]
+C  [libc.so.6+0x3cf0c]
+C  [libX11.so.6+0x3cc30]  _XDefaultIOError+0x0
+C  [libX11.so.6+0x40010]  _XIOError+0x70
+C  [libX11.so.6+0x44e3c]  _XReply+0x3bc
+C  [libX11.so.6+0x2a324]  XInternAtom+0x134
+C  [libawt_xawt.so+0x31064]  Java_sun_awt_X11_XlibWrapper_InternAtom+0x54
+j  sun.awt.X11.XlibWrapper.InternAtom(JLjava/lang/String;I)J+0 java.desktop@21.0.2
+j  sun.awt.X11.XAtom.<init>(JLjava/lang/String;Z)V+31 java.desktop@21.0.2
+j  sun.awt.X11.XAtom.<init>(JLjava/lang/String;)V+4 java.desktop@21.0.2
+j  sun.awt.X11.XAtom.get(Ljava/lang/String;)Lsun/awt/X11/XAtom;+17 java.desktop@21.0.2
+j  sun.awt.X11.XSystemTrayPeer.<clinit>()V+10 java.desktop@21.0.2
+v  ~StubRoutines::call_stub 0x0000ffff869e0140
+V  [libjvm.so+0x833fe4]
